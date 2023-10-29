@@ -1,5 +1,7 @@
 package br.com.guilhermeRibeiro.backendGigaStore.domain.entity;
 
+import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.request.produto.ProdutoRequest;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 
@@ -19,13 +21,12 @@ public class Produto {
     public Produto() {
     }
 
-    public Produto(Long id, String nome, String referencia, BigDecimal valor, Double estoque, boolean ativo) {
-        this.id = id;
-        this.nome = nome;
-        this.referencia = referencia;
-        this.valor = valor;
-        this.estoque = estoque;
-        this.ativo = ativo;
+    public Produto(ProdutoRequest request) {
+        this.nome = request.getNome();
+        this.referencia = request.getReferencia();
+        this.valor = request.getValor();
+        this.estoque = request.getEstoque();
+        this.ativo = request.isAtivo();
     }
 
     public Long getId() {
