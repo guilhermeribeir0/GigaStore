@@ -36,6 +36,13 @@ public class ClienteController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
+    @GetMapping(value = "/{cpf}")
+    public @ResponseBody ResponseEntity<ClienteResponse> buscaClientePorId(@PathVariable String cpf) {
+        Cliente cliente = clienteService.buscarClientePorCpf(cpf);
+        ClienteResponse response = responseMapper.modelToResponse(cliente);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
     @PostMapping
     public @ResponseBody ResponseEntity<ClienteResponse> cadastrarCliente(@RequestBody ClienteRequest request) {
         Cliente cliente = clienteService.cadastrarCliente(request);

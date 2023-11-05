@@ -1,21 +1,42 @@
 package br.com.guilhermeRibeiro.backendGigaStore.domain.entity;
 
-import javax.persistence.Column;
+import javax.persistence.*;
+import java.math.BigDecimal;
 
+@Entity
+@Table(name = "t_detalhes")
 public class Detalhes {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @ManyToOne
+    @JoinColumn(name = "id_venda")
     private Venda venda;
+    @OneToOne
+    @JoinColumn(name = "id_produto")
     private Produto produto;
     @Column(name = "quantidade_produto")
     private Integer quanatidadeProduto;
+    @Column(name = "valor_produto")
+    private BigDecimal valorProduto;
 
     public Detalhes() {
     }
 
-    public Detalhes(Venda venda, Produto produto, Integer quanatidadeProduto) {
+    public Detalhes(Venda venda, Produto produto, Integer quanatidadeProduto, BigDecimal valorProduto) {
         this.venda = venda;
         this.produto = produto;
         this.quanatidadeProduto = quanatidadeProduto;
+        this.valorProduto = valorProduto;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Venda getVenda() {
@@ -40,5 +61,13 @@ public class Detalhes {
 
     public void setQuanatidadeProduto(Integer quanatidadeProduto) {
         this.quanatidadeProduto = quanatidadeProduto;
+    }
+
+    public BigDecimal getValorProduto() {
+        return valorProduto;
+    }
+
+    public void setValorProduto(BigDecimal valorProduto) {
+        this.valorProduto = valorProduto;
     }
 }

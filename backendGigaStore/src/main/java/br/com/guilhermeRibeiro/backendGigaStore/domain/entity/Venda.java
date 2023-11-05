@@ -1,5 +1,7 @@
 package br.com.guilhermeRibeiro.backendGigaStore.domain.entity;
 
+import org.springframework.context.annotation.Lazy;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -13,20 +15,19 @@ public class Venda {
     private Long id;
     @Column(name = "data_cadastro")
     private LocalDate dataCadastro;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_cliente")
     private Cliente cliente;
-    @OneToMany
-    private Detalhes detalhes;
     private BigDecimal valor;
     private boolean cancelada;
 
     public Venda() {
     }
 
-    public Venda(Long id, LocalDate dataCadastro, Cliente cliente, Detalhes detalhes, BigDecimal valor, boolean cancelada) {
+    public Venda(Long id, LocalDate dataCadastro, Cliente cliente, BigDecimal valor, boolean cancelada) {
         this.id = id;
         this.dataCadastro = dataCadastro;
         this.cliente = cliente;
-        this.detalhes = detalhes;
         this.valor = valor;
         this.cancelada = cancelada;
     }
@@ -53,14 +54,6 @@ public class Venda {
 
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
-    }
-
-    public Detalhes getDetalhes() {
-        return detalhes;
-    }
-
-    public void setDetalhes(Detalhes detalhes) {
-        this.detalhes = detalhes;
     }
 
     public BigDecimal getValor() {

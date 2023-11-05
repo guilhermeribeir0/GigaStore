@@ -33,6 +33,14 @@ public class ClienteService {
         return cliente.get();
     }
 
+    public Cliente buscarClientePorCpf(String cpf) {
+        Optional<Cliente> cliente = clienteRepository.findByCpf(cpf);
+        if (cliente.isEmpty()) {
+            throw new RuntimeException(ValidacaoException.CLIENTE_NAO_ENCONTRADO + " - CPF: " + cpf);
+        }
+        return cliente.get();
+    }
+
     @Transactional
     public Cliente cadastrarCliente(ClienteRequest request) {
         try {
