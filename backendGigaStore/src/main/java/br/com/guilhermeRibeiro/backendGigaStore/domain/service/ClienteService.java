@@ -50,4 +50,18 @@ public class ClienteService {
             throw new RuntimeException("Erro ao cadastrar cliente." + e.getMessage());
         }
     }
+
+    @Transactional
+    public Cliente alterarAtivo(Long id) {
+        Optional<Cliente> cliente = Optional.of(clienteRepository.findById(id)
+                .map(cli -> {
+                    if (cli.isAtivo()) {
+                        cli.setAtivo(false);
+                    } else {
+                        cli.setAtivo(true);
+                    }
+                    return clienteRepository.save(cli);
+                }).orElseThrow(() -> new RuntimeException(ValidacaoException.CLIENTE_NAO_ENCONTRADO)));
+        return cliente.get();
+    }
 }

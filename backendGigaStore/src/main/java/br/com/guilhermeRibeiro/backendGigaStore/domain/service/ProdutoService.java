@@ -7,6 +7,7 @@ import br.com.guilhermeRibeiro.backendGigaStore.domain.repository.ProdutoReposit
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.swing.text.html.Option;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
@@ -38,5 +39,19 @@ public class ProdutoService {
         } catch (Exception e) {
             throw new RuntimeException("Erro ao cadastrar produto." + e.getMessage());
         }
+    }
+
+    @Transactional
+    public Produto alterarAtivo(Long id) {
+        Optional<Produto> produto = Optional.of(produtoRepository.findById(id)
+                .map(prod -> {
+                    if (prod.isAtivo()) {
+                        prod.setAtivo(false);
+                    } else {
+                        prod.setAtivo(true);
+                    }
+                    return produtoRepository.save(prod);
+                }).orElseThrow(() -> new RuntimeException(ValidacaoException.PRODUTO_NAO_ENCONTRADO)));
+        return produto.get();
     }
 }

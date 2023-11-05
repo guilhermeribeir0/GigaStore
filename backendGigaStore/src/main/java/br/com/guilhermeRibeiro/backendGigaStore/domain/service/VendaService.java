@@ -9,5 +9,9 @@ public class VendaService {
 
     @Autowired
     private VendaRepository vendaRepository;
+    @Autowired
+    private ClienteService clienteService;
+    @Autowired
+    private ProdutoService produtoService;
 
 }
