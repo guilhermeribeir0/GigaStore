@@ -29,14 +29,14 @@ public class ClienteController {
         return new ResponseEntity<>(responses, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/{id}")
+    @GetMapping(value = "id/{id}")
     public @ResponseBody ResponseEntity<ClienteResponse> buscaClientePorId(@PathVariable Long id) {
         Cliente cliente = clienteService.buscarClientePorId(id);
         ClienteResponse response = responseMapper.modelToResponse(cliente);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/{cpf}")
+    @GetMapping(value = "cpf/{cpf}")
     public @ResponseBody ResponseEntity<ClienteResponse> buscaClientePorId(@PathVariable String cpf) {
         Cliente cliente = clienteService.buscarClientePorCpf(cpf);
         ClienteResponse response = responseMapper.modelToResponse(cliente);
@@ -48,5 +48,12 @@ public class ClienteController {
         Cliente cliente = clienteService.cadastrarCliente(request);
         ClienteResponse response = responseMapper.modelToResponse(cliente);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
+    }
+
+    @PatchMapping(value = "alterarAtivo/{id}")
+    public @ResponseBody ResponseEntity<ClienteResponse> alterarAtivoCliente(@PathVariable Long id) {
+        Cliente cliente = clienteService.alterarAtivo(id);
+        ClienteResponse response = responseMapper.modelToResponse(cliente);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }

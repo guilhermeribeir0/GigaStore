@@ -17,8 +17,6 @@ public class Cliente {
     private Long id;
     private String nome;
     @CPF
-    @Min(11)
-    @Max(11)
     private String cpf;
     @Email
     private String email;
