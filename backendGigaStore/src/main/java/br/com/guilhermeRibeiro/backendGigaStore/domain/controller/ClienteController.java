@@ -30,14 +30,14 @@ public class ClienteController {
     }
 
     @GetMapping(value = "id/{id}")
-    public @ResponseBody ResponseEntity<ClienteResponse> buscaClientePorId(@PathVariable Long id) {
+    public @ResponseBody ResponseEntity<ClienteResponse> buscaClientePorId(@PathVariable("id") Long id) {
         Cliente cliente = clienteService.buscarClientePorId(id);
         ClienteResponse response = responseMapper.modelToResponse(cliente);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @GetMapping(value = "cpf/{cpf}")
-    public @ResponseBody ResponseEntity<ClienteResponse> buscaClientePorId(@PathVariable String cpf) {
+    public @ResponseBody ResponseEntity<ClienteResponse> buscaClientePorId(@PathVariable("cpf") String cpf) {
         Cliente cliente = clienteService.buscarClientePorCpf(cpf);
         ClienteResponse response = responseMapper.modelToResponse(cliente);
         return new ResponseEntity<>(response, HttpStatus.OK);
@@ -51,7 +51,7 @@ public class ClienteController {
     }
 
     @PatchMapping(value = "alterarAtivo/{id}")
-    public @ResponseBody ResponseEntity<ClienteResponse> alterarAtivoCliente(@PathVariable Long id) {
+    public @ResponseBody ResponseEntity<ClienteResponse> alterarAtivoCliente(@PathVariable("id") Long id) {
         Cliente cliente = clienteService.alterarAtivo(id);
         ClienteResponse response = responseMapper.modelToResponse(cliente);
         return new ResponseEntity<>(response, HttpStatus.OK);

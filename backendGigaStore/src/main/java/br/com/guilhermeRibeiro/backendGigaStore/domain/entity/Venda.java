@@ -24,8 +24,7 @@ public class Venda {
     public Venda() {
     }
 
-    public Venda(Long id, LocalDate dataCadastro, Cliente cliente, BigDecimal valor, boolean cancelada) {
-        this.id = id;
+    public Venda(LocalDate dataCadastro, Cliente cliente, BigDecimal valor, boolean cancelada) {
         this.dataCadastro = dataCadastro;
         this.cliente = cliente;
         this.valor = valor;
