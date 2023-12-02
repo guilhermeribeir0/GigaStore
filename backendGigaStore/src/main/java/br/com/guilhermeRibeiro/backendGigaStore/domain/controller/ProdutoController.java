@@ -29,7 +29,7 @@ public class ProdutoController {
         return new ResponseEntity<>(responses, HttpStatus.OK);
     }
 
-    @GetMapping(value = "id/{id}")
+    @GetMapping(value = "/{id}")
     public @ResponseBody ResponseEntity<ProdutoResponse> buscaProdutoPorId(@PathVariable("id") Long id) {
         Produto produto = produtoService.buscarProdutoPorId(id);
         ProdutoResponse response = responseMapper.modelToResponse(produto);
@@ -41,6 +41,13 @@ public class ProdutoController {
         Produto produto = produtoService.cadastrarProduto(request);
         ProdutoResponse response = responseMapper.modelToResponse(produto);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
+    }
+
+    @PutMapping(value = "/{id}")
+    public @ResponseBody ResponseEntity<ProdutoResponse> atualizarProduto(@PathVariable("id") Long id, @RequestBody ProdutoRequest request) {
+        Produto produto = produtoService.atualizarProduto(id, request);
+        ProdutoResponse response = responseMapper.modelToResponse(produto);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @PatchMapping(value = "alterarAtivo/{id}")
