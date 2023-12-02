@@ -8,12 +8,12 @@ public class DetalheMinResponse {
 
     private Produto produto;
     private Integer quanatidadeProduto;
-    private BigDecimal valorProduto;
+    private Double valorProduto;
 
     public DetalheMinResponse() {
     }
 
-    public DetalheMinResponse(Produto produto, Integer quanatidadeProduto, BigDecimal valorProduto) {
+    public DetalheMinResponse(Produto produto, Integer quanatidadeProduto, Double valorProduto) {
         this.produto = produto;
         this.quanatidadeProduto = quanatidadeProduto;
         this.valorProduto = valorProduto;
@@ -35,11 +35,11 @@ public class DetalheMinResponse {
         this.quanatidadeProduto = quanatidadeProduto;
     }
 
-    public BigDecimal getValorProduto() {
+    public Double getValorProduto() {
         return valorProduto;
     }
 
-    public void setValorProduto(BigDecimal valorProduto) {
+    public void setValorProduto(Double valorProduto) {
         this.valorProduto = valorProduto;
     }
 }

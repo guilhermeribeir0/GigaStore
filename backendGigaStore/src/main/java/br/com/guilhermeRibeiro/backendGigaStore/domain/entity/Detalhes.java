@@ -19,12 +19,12 @@ public class Detalhes {
     @Column(name = "quantidade_produto")
     private Integer quanatidadeProduto;
     @Column(name = "valor_produto")
-    private BigDecimal valorProduto;
+    private Double valorProduto;
 
     public Detalhes() {
     }
 
-    public Detalhes(Venda venda, Produto produto, Integer quanatidadeProduto, BigDecimal valorProduto) {
+    public Detalhes(Venda venda, Produto produto, Integer quanatidadeProduto, Double valorProduto) {
         this.venda = venda;
         this.produto = produto;
         this.quanatidadeProduto = quanatidadeProduto;
@@ -63,11 +63,11 @@ public class Detalhes {
         this.quanatidadeProduto = quanatidadeProduto;
     }
 
-    public BigDecimal getValorProduto() {
+    public Double getValorProduto() {
         return valorProduto;
     }
 
-    public void setValorProduto(BigDecimal valorProduto) {
+    public void setValorProduto(Double valorProduto) {
         this.valorProduto = valorProduto;
     }
 }

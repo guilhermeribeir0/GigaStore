@@ -3,18 +3,19 @@ package br.com.guilhermeRibeiro.backendGigaStore.domain.dto.response.venda;
 import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.response.detalhes.DetalheMinResponse;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 public class VendaResponse {
 
     private Long id;
     private Long idCliente;
-    private DetalheMinResponse detalheMinResponse;
+    private List<DetalheMinResponse> detalheMinResponse;
     private BigDecimal valorTotal;
 
     public VendaResponse() {
     }
 
-    public VendaResponse(Long id, Long idCliente, DetalheMinResponse detalheMinResponse, BigDecimal valorTotal) {
+    public VendaResponse(Long id, Long idCliente, List<DetalheMinResponse> detalheMinResponse, BigDecimal valorTotal) {
         this.id = id;
         this.idCliente = idCliente;
         this.detalheMinResponse = detalheMinResponse;
@@ -37,11 +38,11 @@ public class VendaResponse {
         this.idCliente = idCliente;
     }
 
-    public DetalheMinResponse getDetalheMinResponse() {
+    public List<DetalheMinResponse> getDetalheMinResponse() {
         return detalheMinResponse;
     }
 
-    public void setDetalheMinResponse(DetalheMinResponse detalheMinResponse) {
+    public void setDetalheMinResponse(List<DetalheMinResponse> detalheMinResponse) {
         this.detalheMinResponse = detalheMinResponse;
     }
 

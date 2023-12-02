@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.math.BigDecimal;
+import java.util.List;
 
 @Service
 public class DetalhesService {
@@ -17,8 +18,12 @@ public class DetalhesService {
     private DetalhesRepository detalhesRepository;
 
     @Transactional
-    public void cadastrar(Venda venda, Produto produto, Integer quantidadeProduto, BigDecimal valorProduto) {
+    public Detalhes cadastrar(Venda venda, Produto produto, Integer quantidadeProduto, Double valorProduto) {
         Detalhes detalhes = new Detalhes(venda, produto, quantidadeProduto, valorProduto);
-        detalhesRepository.save(detalhes);
+        return detalhesRepository.save(detalhes);
+    }
+
+    public List<Detalhes> buscarDetalhesPorIdVenda(Long idVenda) {
+        return detalhesRepository.findByVendaId(idVenda);
     }
 }

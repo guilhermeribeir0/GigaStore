@@ -1,19 +1,17 @@
 package br.com.guilhermeRibeiro.backendGigaStore.domain.dto.request.produto;
 
-import java.math.BigDecimal;
-
 public class ProdutoRequest {
 
     private String nome;
     private String referencia;
-    private BigDecimal valor;
-    private Double estoque;
+    private Double valor;
+    private Integer estoque;
     private boolean ativo;
 
     public ProdutoRequest() {
     }
 
-    public ProdutoRequest(String nome, String referencia, BigDecimal valor, Double estoque, boolean ativo) {
+    public ProdutoRequest(String nome, String referencia, Double valor, Integer estoque, boolean ativo) {
         this.nome = nome;
         this.referencia = referencia;
         this.valor = valor;
@@ -37,19 +35,19 @@ public class ProdutoRequest {
         this.referencia = referencia;
     }
 
-    public BigDecimal getValor() {
+    public Double getValor() {
         return valor;
     }
 
-    public void setValor(BigDecimal valor) {
+    public void setValor(Double valor) {
         this.valor = valor;
     }
 
-    public Double getEstoque() {
+    public Integer getEstoque() {
         return estoque;
     }
 
-    public void setEstoque(Double estoque) {
+    public void setEstoque(Integer estoque) {
         this.estoque = estoque;
     }
 

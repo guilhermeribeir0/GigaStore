@@ -18,13 +18,13 @@ public class Venda {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_cliente")
     private Cliente cliente;
-    private BigDecimal valor;
+    private Double valor;
     private boolean cancelada;
 
     public Venda() {
     }
 
-    public Venda(LocalDate dataCadastro, Cliente cliente, BigDecimal valor, boolean cancelada) {
+    public Venda(LocalDate dataCadastro, Cliente cliente, Double valor, boolean cancelada) {
         this.dataCadastro = dataCadastro;
         this.cliente = cliente;
         this.valor = valor;
@@ -55,11 +55,11 @@ public class Venda {
         this.cliente = cliente;
     }
 
-    public BigDecimal getValor() {
+    public Double getValor() {
         return valor;
     }
 
-    public void setValor(BigDecimal valor) {
+    public void setValor(Double valor) {
         this.valor = valor;
     }
 

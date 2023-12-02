@@ -7,14 +7,14 @@ public class ProdutoResponse {
     private Long id;
     private String nome;
     private String referencia;
-    private BigDecimal valor;
-    private Double estoque;
+    private Double valor;
+    private Integer estoque;
     private boolean ativo;
 
     public ProdutoResponse() {
     }
 
-    public ProdutoResponse(Long id, String nome, String referencia, BigDecimal valor, Double estoque, boolean ativo) {
+    public ProdutoResponse(Long id, String nome, String referencia, Double valor, Integer estoque, boolean ativo) {
         this.id = id;
         this.nome = nome;
         this.referencia = referencia;
@@ -47,19 +47,19 @@ public class ProdutoResponse {
         this.referencia = referencia;
     }
 
-    public BigDecimal getValor() {
+    public Double getValor() {
         return valor;
     }
 
-    public void setValor(BigDecimal valor) {
+    public void setValor(Double valor) {
         this.valor = valor;
     }
 
-    public Double getEstoque() {
+    public Integer getEstoque() {
         return estoque;
     }
 
-    public void setEstoque(Double estoque) {
+    public void setEstoque(Integer estoque) {
         this.estoque = estoque;
     }
 

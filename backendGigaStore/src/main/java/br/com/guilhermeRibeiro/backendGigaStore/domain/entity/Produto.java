@@ -3,7 +3,6 @@ package br.com.guilhermeRibeiro.backendGigaStore.domain.entity;
 import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.request.produto.ProdutoRequest;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 
 @Entity
 @Table(name = "t_produto")
@@ -14,8 +13,8 @@ public class Produto {
     private Long id;
     private String nome;
     private String referencia;
-    private BigDecimal valor;
-    private Double estoque;
+    private Double valor;
+    private Integer estoque;
     private boolean ativo;
 
     public Produto() {
@@ -53,19 +52,19 @@ public class Produto {
         this.referencia = referencia;
     }
 
-    public BigDecimal getValor() {
+    public Double getValor() {
         return valor;
     }
 
-    public void setValor(BigDecimal valor) {
+    public void setValor(Double valor) {
         this.valor = valor;
     }
 
-    public Double getEstoque() {
+    public Integer getEstoque() {
         return estoque;
     }
 
-    public void setEstoque(Double estoque) {
+    public void setEstoque(Integer estoque) {
         this.estoque = estoque;
     }
 
