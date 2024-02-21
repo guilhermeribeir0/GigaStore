@@ -73,11 +73,7 @@ public class ProdutoService {
     public Produto alterarAtivo(Long id) {
         Produto produto = (produtoRepository.findById(id)
                 .map(prod -> {
-                    if (prod.isAtivo()) {
-                        prod.setAtivo(false);
-                    } else {
-                        prod.setAtivo(true);
-                    }
+                    prod.setAtivo(!prod.isAtivo());
                     return produtoRepository.save(prod);
                 }).orElseThrow(() -> new RuntimeException(ValidacaoException.PRODUTO_NAO_ENCONTRADO)));
         return produto;

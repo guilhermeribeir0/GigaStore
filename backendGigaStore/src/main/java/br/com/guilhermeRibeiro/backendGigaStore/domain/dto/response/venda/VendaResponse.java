@@ -2,7 +2,6 @@ package br.com.guilhermeRibeiro.backendGigaStore.domain.dto.response.venda;
 
 import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.response.detalhes.DetalheMinResponse;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 public class VendaResponse {
@@ -10,16 +9,16 @@ public class VendaResponse {
     private Long id;
     private Long idCliente;
     private List<DetalheMinResponse> detalheMinResponse;
-    private BigDecimal valorTotal;
+    private Double valor;
 
     public VendaResponse() {
     }
 
-    public VendaResponse(Long id, Long idCliente, List<DetalheMinResponse> detalheMinResponse, BigDecimal valorTotal) {
+    public VendaResponse(Long id, Long idCliente, List<DetalheMinResponse> detalheMinResponse, Double valor) {
         this.id = id;
         this.idCliente = idCliente;
         this.detalheMinResponse = detalheMinResponse;
-        this.valorTotal = valorTotal;
+        this.valor = valor;
     }
 
     public Long getId() {
@@ -46,12 +45,12 @@ public class VendaResponse {
         this.detalheMinResponse = detalheMinResponse;
     }
 
-    public BigDecimal getValorTotal() {
-        return valorTotal;
+    public Double getValor() {
+        return valor;
     }
 
-    public void setValorTotal(BigDecimal valorTotal) {
-        this.valorTotal = valorTotal;
+    public void setValor(Double valor) {
+        this.valor = valor;
     }
 
     @Override
@@ -60,7 +59,7 @@ public class VendaResponse {
                 "id=" + id +
                 ", idCliente=" + idCliente +
                 ", detalheMinResponse=" + detalheMinResponse +
-                ", valorTotal=" + valorTotal +
+                ", valorTotal=" + valor +
                 '}';
     }
 }

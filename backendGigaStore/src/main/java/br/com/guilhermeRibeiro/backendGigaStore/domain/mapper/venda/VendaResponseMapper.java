@@ -6,9 +6,7 @@ import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.response.venda.VendaR
 import br.com.guilhermeRibeiro.backendGigaStore.domain.entity.Detalhes;
 import br.com.guilhermeRibeiro.backendGigaStore.domain.entity.Venda;
 import br.com.guilhermeRibeiro.backendGigaStore.domain.service.DetalhesService;
-import org.mapstruct.AfterMapping;
-import org.mapstruct.Mapper;
-import org.mapstruct.MappingTarget;
+import org.mapstruct.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
@@ -20,15 +18,16 @@ public abstract class VendaResponseMapper {
     @Autowired
     private DetalhesService detalhesService;
 
+    @Mapping(target = "idCliente", source = "venda.cliente.id")
     public abstract VendaResponse modelToResponse(Venda venda);
 
     public abstract List<VendaResponse> modelToList(List<Venda> venda);
 
-    @AfterMapping
-    private void mapearDetalhes(@MappingTarget VendaResponse response) {
+    @BeforeMapping
+    protected void mapearDetalhes(Venda venda, @MappingTarget VendaResponse response) {
         DetalheMinResponse detalheMinResponse = new DetalheMinResponse();
         List<DetalheMinResponse> responses = new ArrayList<>();
-        List<Detalhes> listaDetalhes = detalhesService.buscarDetalhesPorIdVenda(response.getId());
+        List<Detalhes> listaDetalhes = detalhesService.buscarDetalhesPorIdVenda(venda.getId());
 
         for (Detalhes detalhes: listaDetalhes) {
             detalheMinResponse.setProduto(detalhes.getProduto());

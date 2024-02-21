@@ -18,8 +18,7 @@ public class DetalhesService {
     private DetalhesRepository detalhesRepository;
 
     @Transactional
-    public Detalhes cadastrar(Venda venda, Produto produto, Integer quantidadeProduto, Double valorProduto) {
-        Detalhes detalhes = new Detalhes(venda, produto, quantidadeProduto, valorProduto);
+    public Detalhes cadastrar(Detalhes detalhes) {
         return detalhesRepository.save(detalhes);
     }
 

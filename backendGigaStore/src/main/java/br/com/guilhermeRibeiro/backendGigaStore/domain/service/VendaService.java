@@ -52,14 +52,16 @@ public class VendaService {
         return vendaSalva;
     }
 
-    public Detalhes cadastrarDetalhesVendas(Venda venda, List<ProdutoMinRequest> requests) {
-        Detalhes detalhes = new Detalhes();
+    public List<Detalhes> cadastrarDetalhesVendas(Venda venda, List<ProdutoMinRequest> requests) {
+        List<Detalhes> detalhes = new ArrayList<>();
         try {
             List<Produto> produtos = definirProdutosVenda(requests);
-            for (Produto produto: produtos) {
-                for (ProdutoMinRequest request: requests) {
-                    detalhes = detalhesService.cadastrar(venda, produto, request.getQuantidade(), produto.getValor());
-                    produtoService.saidaEstoque(produto.getId(), request.getQuantidade());
+
+            for (int i = 0; i < produtos.size(); i++) {
+                if (produtos.get(i).getId() == requests.get(i).getId()) {
+                    Detalhes detalhe = new Detalhes(venda, produtos.get(i), requests.get(i).getQuantidade(), produtos.get(i).getValor());
+                    detalhes.add(detalhesService.cadastrar(detalhe));
+                    produtoService.saidaEstoque(produtos.get(i).getId(), requests.get(i).getQuantidade());
                 }
             }
         } catch (Exception e) {
@@ -72,7 +74,7 @@ public class VendaService {
         double total = 0.0;
         for (ProdutoMinRequest produto: produtos) {
             double valorProduto = buscarProdutoPorid(produto.getId()).getValor();
-            total += valorProduto * produto.getQuantidade();
+            total += (valorProduto * produto.getQuantidade());
         }
         return total;
     }
