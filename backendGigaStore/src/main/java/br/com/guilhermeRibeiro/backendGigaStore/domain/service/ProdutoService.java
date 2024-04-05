@@ -4,7 +4,6 @@ import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.request.produto.Produ
 import br.com.guilhermeRibeiro.backendGigaStore.domain.entity.Produto;
 import br.com.guilhermeRibeiro.backendGigaStore.domain.exception.ValidacaoException;
 import br.com.guilhermeRibeiro.backendGigaStore.domain.repository.ProdutoRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -14,8 +13,11 @@ import java.util.Optional;
 @Service
 public class ProdutoService {
 
-    @Autowired
-    private ProdutoRepository produtoRepository;
+    private final ProdutoRepository produtoRepository;
+
+    public ProdutoService(ProdutoRepository produtoRepository) {
+        this.produtoRepository = produtoRepository;
+    }
 
     public List<Produto> listarProdutos() {
         List<Produto> produtos = produtoRepository.findAll();

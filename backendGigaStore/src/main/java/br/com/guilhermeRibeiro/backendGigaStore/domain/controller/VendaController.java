@@ -16,11 +16,16 @@ import java.util.List;
 @RequestMapping(value = "/vendas")
 public class VendaController {
 
-    @Autowired
-    private VendaService vendaService;
+    private final VendaService vendaService;
+    private final VendaResponseMapper responseMapper;
 
-    @Autowired
-    private VendaResponseMapper responseMapper;
+    public VendaController(
+            VendaService vendaService,
+            VendaResponseMapper responseMapper
+    ) {
+        this.vendaService = vendaService;
+        this.responseMapper = responseMapper;
+    }
 
     @GetMapping
     public @ResponseBody ResponseEntity<List<VendaResponse>> listaVendas() {

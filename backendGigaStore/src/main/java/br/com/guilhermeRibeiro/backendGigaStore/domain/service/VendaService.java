@@ -8,7 +8,6 @@ import br.com.guilhermeRibeiro.backendGigaStore.domain.entity.Produto;
 import br.com.guilhermeRibeiro.backendGigaStore.domain.entity.Venda;
 import br.com.guilhermeRibeiro.backendGigaStore.domain.exception.ValidacaoException;
 import br.com.guilhermeRibeiro.backendGigaStore.domain.repository.VendaRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -20,14 +19,22 @@ import java.util.Objects;
 @Service
 public class VendaService {
 
-    @Autowired
-    private VendaRepository vendaRepository;
-    @Autowired
-    private ClienteService clienteService;
-    @Autowired
-    private ProdutoService produtoService;
-    @Autowired
-    private DetalhesService detalhesService;
+    private final VendaRepository vendaRepository;
+    private final ClienteService clienteService;
+    private final ProdutoService produtoService;
+    private final DetalhesService detalhesService;
+
+    public VendaService(
+            VendaRepository vendaRepository,
+            ClienteService clienteService,
+            ProdutoService produtoService,
+            DetalhesService detalhesService
+    ) {
+        this.vendaRepository = vendaRepository;
+        this.clienteService = clienteService;
+        this.produtoService = produtoService;
+        this.detalhesService = detalhesService;
+    }
 
     public List<Venda> listarVendas() {
         List<Venda> vendas = vendaRepository.findAll();

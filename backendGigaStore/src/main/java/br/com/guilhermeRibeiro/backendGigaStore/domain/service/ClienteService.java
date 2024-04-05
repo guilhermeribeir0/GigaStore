@@ -1,13 +1,9 @@
 package br.com.guilhermeRibeiro.backendGigaStore.domain.service;
 
 import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.request.cliente.ClienteRequest;
-import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.request.produto.ProdutoRequest;
-import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.response.cliente.ClienteResponse;
 import br.com.guilhermeRibeiro.backendGigaStore.domain.entity.Cliente;
-import br.com.guilhermeRibeiro.backendGigaStore.domain.entity.Produto;
 import br.com.guilhermeRibeiro.backendGigaStore.domain.exception.ValidacaoException;
 import br.com.guilhermeRibeiro.backendGigaStore.domain.repository.ClienteRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -17,8 +13,11 @@ import java.util.Optional;
 @Service
 public class ClienteService {
 
-    @Autowired
-    private ClienteRepository clienteRepository;
+    private final ClienteRepository clienteRepository;
+
+    public ClienteService(ClienteRepository clienteRepository) {
+        this.clienteRepository = clienteRepository;
+    }
 
     public List<Cliente> listarClientes() {
         List<Cliente> clientes = clienteRepository.findAll();

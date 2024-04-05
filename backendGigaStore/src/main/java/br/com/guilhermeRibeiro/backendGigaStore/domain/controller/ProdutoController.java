@@ -16,11 +16,16 @@ import java.util.List;
 @RequestMapping(value = "/produtos")
 public class ProdutoController {
 
-    @Autowired
-    private ProdutoService produtoService;
+    private final ProdutoService produtoService;
+    private final ProdutoResponseMapper responseMapper;
 
-    @Autowired
-    private ProdutoResponseMapper responseMapper;
+    public ProdutoController(
+            ProdutoService produtoService,
+            ProdutoResponseMapper responseMapper
+    ) {
+        this.produtoService = produtoService;
+        this.responseMapper = responseMapper;
+    }
 
     @GetMapping
     public @ResponseBody ResponseEntity<List<ProdutoResponse>> listarProdutos() {

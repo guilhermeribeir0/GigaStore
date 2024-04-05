@@ -16,11 +16,16 @@ import java.util.List;
 @RequestMapping(value = "/clientes")
 public class ClienteController {
 
-    @Autowired
-    private ClienteService clienteService;
+    private final ClienteService clienteService;
+    private final ClienteResponseMapper responseMapper;
 
-    @Autowired
-    private ClienteResponseMapper responseMapper;
+    public ClienteController(
+            ClienteService clienteService,
+            ClienteResponseMapper responseMapper
+    ) {
+        this.clienteService = clienteService;
+        this.responseMapper = responseMapper;
+    }
 
     @GetMapping
     public @ResponseBody ResponseEntity<List<ClienteResponse>> listarClientes() {
