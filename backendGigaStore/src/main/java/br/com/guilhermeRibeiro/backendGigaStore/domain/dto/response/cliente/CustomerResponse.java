@@ -1,22 +1,22 @@
 package br.com.guilhermeRibeiro.backendGigaStore.domain.dto.response.cliente;
 
-public class ClienteResponse {
+public class CustomerResponse {
 
     private Long id;
-    private String nome;
+    private String name;
     private String cpf;
     private String email;
-    private boolean ativo;
+    private boolean active;
 
-    public ClienteResponse() {
+    public CustomerResponse() {
     }
 
-    public ClienteResponse(Long id, String nome, String cpf, String email, boolean ativo) {
+    public CustomerResponse(Long id, String name, String cpf, String email, boolean active) {
         this.id = id;
-        this.nome = nome;
+        this.name = name;
         this.cpf = cpf;
         this.email = email;
-        this.ativo = ativo;
+        this.active = active;
     }
 
     public Long getId() {
@@ -28,11 +28,11 @@ public class ClienteResponse {
     }
 
     public String getNome() {
-        return nome;
+        return name;
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        this.name = nome;
     }
 
     public String getCpf() {
@@ -52,21 +52,21 @@ public class ClienteResponse {
     }
 
     public boolean isAtivo() {
-        return ativo;
+        return active;
     }
 
     public void setAtivo(boolean ativo) {
-        this.ativo = ativo;
+        this.active = ativo;
     }
 
     @Override
     public String toString() {
         return "ClienteResponse{" +
                 "id=" + id +
-                ", nome='" + nome + '\'' +
+                ", nome='" + name + '\'' +
                 ", cpf='" + cpf + '\'' +
                 ", email='" + email + '\'' +
-                ", ativo=" + ativo +
+                ", ativo=" + active +
                 '}';
     }
 }

@@ -1,28 +1,28 @@
 package br.com.guilhermeRibeiro.backendGigaStore.domain.dto.request.cliente;
 
-public class ClienteRequest {
+public class CustomerRequest {
 
-    private String nome;
+    private String name;
     private String cpf;
     private String email;
-    private boolean ativo;
+    private boolean active;
 
-    public ClienteRequest() {
+    public CustomerRequest() {
     }
 
-    public ClienteRequest(String nome, String cpf, String email, boolean ativo) {
-        this.nome = nome;
+    public CustomerRequest(String name, String cpf, String email, boolean active) {
+        this.name = name;
         this.cpf = cpf;
         this.email = email;
-        this.ativo = ativo;
+        this.active = active;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String nome) {
+        this.name = nome;
     }
 
     public String getCpf() {
@@ -41,11 +41,11 @@ public class ClienteRequest {
         this.email = email;
     }
 
-    public boolean isAtivo() {
-        return ativo;
+    public boolean isActive() {
+        return active;
     }
 
-    public void setAtivo(boolean ativo) {
-        this.ativo = ativo;
+    public void setActive(boolean active) {
+        this.active = active;
     }
 }

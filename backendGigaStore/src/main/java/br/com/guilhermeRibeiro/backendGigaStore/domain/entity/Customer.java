@@ -1,35 +1,33 @@
 package br.com.guilhermeRibeiro.backendGigaStore.domain.entity;
 
-import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.request.cliente.ClienteRequest;
+import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.request.cliente.CustomerRequest;
 import org.hibernate.validator.constraints.br.CPF;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 
 @Entity
-@Table(name = "t_cliente")
-public class Cliente {
+@Table(name = "t_customer")
+public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nome;
+    private String name;
     @CPF
     private String cpf;
     @Email
     private String email;
-    private boolean ativo;
+    private boolean active;
 
-    public Cliente() {
+    public Customer() {
     }
 
-    public Cliente(ClienteRequest request) {
-        this.nome = request.getNome();
+    public Customer(CustomerRequest request) {
+        this.name = request.getName();
         this.cpf = request.getCpf();
         this.email = request.getEmail();
-        this.ativo = request.isAtivo();
+        this.active = request.isActive();
     }
 
     public Long getId() {
@@ -40,12 +38,12 @@ public class Cliente {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String nome) {
+        this.name = nome;
     }
 
     public String getCpf() {
@@ -64,11 +62,11 @@ public class Cliente {
         this.email = email;
     }
 
-    public boolean isAtivo() {
-        return ativo;
+    public boolean isActive() {
+        return active;
     }
 
-    public void setAtivo(boolean ativo) {
-        this.ativo = ativo;
+    public void setActive(boolean active) {
+        this.active = active;
     }
 }

@@ -1,9 +1,9 @@
 package br.com.guilhermeRibeiro.backendGigaStore.domain.repository;
 
-import br.com.guilhermeRibeiro.backendGigaStore.domain.entity.Produto;
+import br.com.guilhermeRibeiro.backendGigaStore.domain.entity.Sale;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ProdutoRepository extends JpaRepository<Produto, Long> {
+public interface SaleRepository extends JpaRepository<Sale, Long> {
 }
