@@ -1,7 +1,7 @@
 package br.com.guilhermeRibeiro.backendGigaStore.domain.controller;
 
-import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.request.venda.SaleRequest;
-import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.response.venda.SaleResponse;
+import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.request.sale.SaleRequest;
+import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.response.sale.SaleResponse;
 import br.com.guilhermeRibeiro.backendGigaStore.domain.entity.Sale;
 import br.com.guilhermeRibeiro.backendGigaStore.domain.mapper.venda.SaleResponseMapper;
 import br.com.guilhermeRibeiro.backendGigaStore.domain.service.SaleService;

@@ -1,4 +1,4 @@
-package br.com.guilhermeRibeiro.backendGigaStore.domain.dto.response.detalhes;
+package br.com.guilhermeRibeiro.backendGigaStore.domain.dto.response.details;
 
 import br.com.guilhermeRibeiro.backendGigaStore.domain.entity.Product;
 

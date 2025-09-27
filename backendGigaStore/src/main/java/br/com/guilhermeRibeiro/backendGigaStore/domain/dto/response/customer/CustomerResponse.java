@@ -1,4 +1,4 @@
-package br.com.guilhermeRibeiro.backendGigaStore.domain.dto.response.cliente;
+package br.com.guilhermeRibeiro.backendGigaStore.domain.dto.response.customer;
 
 public class CustomerResponse {
 

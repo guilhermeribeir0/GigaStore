@@ -1,7 +1,7 @@
 package br.com.guilhermeRibeiro.backendGigaStore.domain.mapper.venda;
 
-import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.response.detalhes.DetailMinResponse;
-import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.response.venda.SaleResponse;
+import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.response.details.DetailMinResponse;
+import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.response.sale.SaleResponse;
 import br.com.guilhermeRibeiro.backendGigaStore.domain.entity.Detail;
 import br.com.guilhermeRibeiro.backendGigaStore.domain.entity.Sale;
 import br.com.guilhermeRibeiro.backendGigaStore.domain.service.DetailService;
@@ -23,7 +23,7 @@ public abstract class SaleResponseMapper {
     public abstract List<SaleResponse> modelToList(List<Sale> sale);
 
     @BeforeMapping
-    protected void mapearDetalhes(Sale sale, @MappingTarget SaleResponse response) {
+    protected void mapperDetails(Sale sale, @MappingTarget SaleResponse response) {
         DetailMinResponse detailMinResponse = new DetailMinResponse();
         List<DetailMinResponse> responses = new ArrayList<>();
         List<Detail> details = detailService.findDetailsBySaleId(sale.getId());
@@ -35,6 +35,6 @@ public abstract class SaleResponseMapper {
             responses.add(detailMinResponse);
         }
 
-        response.setDetalheMinResponse(responses);
+        response.setDetailMinResponse(responses);
     }
 }

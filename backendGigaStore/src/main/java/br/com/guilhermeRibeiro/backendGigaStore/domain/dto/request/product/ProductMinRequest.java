@@ -1,4 +1,4 @@
-package br.com.guilhermeRibeiro.backendGigaStore.domain.dto.request.produto;
+package br.com.guilhermeRibeiro.backendGigaStore.domain.dto.request.product;
 
 public class ProductMinRequest {
 

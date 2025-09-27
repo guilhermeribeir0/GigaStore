@@ -1,6 +1,6 @@
 package br.com.guilhermeRibeiro.backendGigaStore.domain.entity;
 
-import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.request.produto.ProductRequest;
+import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.request.product.ProductRequest;
 
 import javax.persistence.*;
 

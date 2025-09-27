@@ -1,6 +1,6 @@
 package br.com.guilhermeRibeiro.backendGigaStore.domain.service;
 
-import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.request.cliente.CustomerRequest;
+import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.request.customer.CustomerRequest;
 import br.com.guilhermeRibeiro.backendGigaStore.domain.entity.Customer;
 import br.com.guilhermeRibeiro.backendGigaStore.domain.exception.CustomerNotFoundException;
 import br.com.guilhermeRibeiro.backendGigaStore.domain.repository.CustomerRepository;

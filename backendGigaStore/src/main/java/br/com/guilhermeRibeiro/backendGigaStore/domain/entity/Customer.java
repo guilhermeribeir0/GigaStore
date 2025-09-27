@@ -1,6 +1,6 @@
 package br.com.guilhermeRibeiro.backendGigaStore.domain.entity;
 
-import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.request.cliente.CustomerRequest;
+import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.request.customer.CustomerRequest;
 import org.hibernate.validator.constraints.br.CPF;
 
 import javax.persistence.*;

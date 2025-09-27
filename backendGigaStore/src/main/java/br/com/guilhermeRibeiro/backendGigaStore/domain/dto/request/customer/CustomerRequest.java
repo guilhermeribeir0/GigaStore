@@ -1,4 +1,4 @@
-package br.com.guilhermeRibeiro.backendGigaStore.domain.dto.request.cliente;
+package br.com.guilhermeRibeiro.backendGigaStore.domain.dto.request.customer;
 
 public class CustomerRequest {
 

@@ -1,6 +1,6 @@
 package br.com.guilhermeRibeiro.backendGigaStore.domain.mapper.cliente;
 
-import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.response.cliente.CustomerResponse;
+import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.response.customer.CustomerResponse;
 import br.com.guilhermeRibeiro.backendGigaStore.domain.entity.Customer;
 import org.mapstruct.AfterMapping;
 import org.mapstruct.Mapper;

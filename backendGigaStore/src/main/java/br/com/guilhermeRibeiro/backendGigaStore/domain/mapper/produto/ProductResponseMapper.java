@@ -1,6 +1,6 @@
 package br.com.guilhermeRibeiro.backendGigaStore.domain.mapper.produto;
 
-import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.response.produto.ProductResponse;
+import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.response.product.ProductResponse;
 import br.com.guilhermeRibeiro.backendGigaStore.domain.entity.Product;
 import org.mapstruct.Mapper;
 

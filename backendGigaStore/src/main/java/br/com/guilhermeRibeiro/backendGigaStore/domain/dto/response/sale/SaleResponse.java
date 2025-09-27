@@ -1,6 +1,6 @@
-package br.com.guilhermeRibeiro.backendGigaStore.domain.dto.response.venda;
+package br.com.guilhermeRibeiro.backendGigaStore.domain.dto.response.sale;
 
-import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.response.detalhes.DetailMinResponse;
+import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.response.details.DetailMinResponse;
 
 import java.util.List;
 
@@ -37,11 +37,11 @@ public class SaleResponse {
         this.idCustomer = idCustomer;
     }
 
-    public List<DetailMinResponse> getDetalheMinResponse() {
+    public List<DetailMinResponse> getDetailMinResponse() {
         return detailMinResponse;
     }
 
-    public void setDetalheMinResponse(List<DetailMinResponse> detailMinResponse) {
+    public void setDetailMinResponse(List<DetailMinResponse> detailMinResponse) {
         this.detailMinResponse = detailMinResponse;
     }
 

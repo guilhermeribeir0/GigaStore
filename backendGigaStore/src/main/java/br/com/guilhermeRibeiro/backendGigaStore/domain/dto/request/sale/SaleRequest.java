@@ -1,6 +1,6 @@
-package br.com.guilhermeRibeiro.backendGigaStore.domain.dto.request.venda;
+package br.com.guilhermeRibeiro.backendGigaStore.domain.dto.request.sale;
 
-import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.request.produto.ProductMinRequest;
+import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.request.product.ProductMinRequest;
 
 import java.util.List;
 

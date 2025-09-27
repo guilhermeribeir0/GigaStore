@@ -1,7 +1,7 @@
 package br.com.guilhermeRibeiro.backendGigaStore.domain.service;
 
-import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.request.produto.ProductMinRequest;
-import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.request.venda.SaleRequest;
+import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.request.product.ProductMinRequest;
+import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.request.sale.SaleRequest;
 import br.com.guilhermeRibeiro.backendGigaStore.domain.entity.Customer;
 import br.com.guilhermeRibeiro.backendGigaStore.domain.entity.Detail;
 import br.com.guilhermeRibeiro.backendGigaStore.domain.entity.Product;

@@ -1,6 +1,6 @@
 package br.com.guilhermeRibeiro.backendGigaStore.domain.service;
 
-import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.request.produto.ProductRequest;
+import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.request.product.ProductRequest;
 import br.com.guilhermeRibeiro.backendGigaStore.domain.entity.Product;
 import br.com.guilhermeRibeiro.backendGigaStore.domain.exception.ProductNotFoundException;
 import br.com.guilhermeRibeiro.backendGigaStore.domain.repository.ProductRepository;
