@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/clientes")
+@RequestMapping(value = "/customer")
 public class CustomerController {
 
     private final CustomerService customerService;
@@ -33,21 +33,21 @@ public class CustomerController {
         return new ResponseEntity<>(responses, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/findClient/{id}")
+    @GetMapping(value = "/findCustomer/{id}")
     public @ResponseBody ResponseEntity<CustomerResponse> findClientById(@PathVariable("id") Long id) {
         Customer customer = customerService.findClientById(id);
         CustomerResponse response = responseMapper.modelToResponse(customer);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/findClient/{cpf}")
+    @GetMapping(value = "/findCustomer/{cpf}")
     public @ResponseBody ResponseEntity<CustomerResponse> findClientByCpf(@PathVariable("cpf") String cpf) {
         Customer customer = customerService.findClientByCpf(cpf);
         CustomerResponse response = responseMapper.modelToResponse(customer);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @PostMapping(value = "/registerClient")
+    @PostMapping(value = "/registerCustomer")
     public @ResponseBody ResponseEntity<CustomerResponse> registerClient(@RequestBody CustomerRequest request) {
         Customer customer = customerService.registerClient(request);
         CustomerResponse response = responseMapper.modelToResponse(customer);

@@ -35,6 +35,6 @@ public abstract class SaleResponseMapper {
             responses.add(detailMinResponse);
         }
 
-        response.setDetailMinResponse(responses);
+        response.setDetailsMinResponse(responses);
     }
 }

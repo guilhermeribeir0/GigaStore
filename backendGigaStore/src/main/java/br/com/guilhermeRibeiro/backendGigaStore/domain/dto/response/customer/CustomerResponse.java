@@ -61,12 +61,12 @@ public class CustomerResponse {
 
     @Override
     public String toString() {
-        return "ClienteResponse{" +
+        return "CustomerResponse {" +
                 "id=" + id +
-                ", nome='" + name + '\'' +
+                ", name='" + name + '\'' +
                 ", cpf='" + cpf + '\'' +
                 ", email='" + email + '\'' +
-                ", ativo=" + active +
+                ", active=" + active +
                 '}';
     }
 }

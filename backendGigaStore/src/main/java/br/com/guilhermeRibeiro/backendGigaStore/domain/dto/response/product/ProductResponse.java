@@ -71,13 +71,13 @@ public class ProductResponse {
 
     @Override
     public String toString() {
-        return "ProdutoResponse{" +
+        return "ProductResponse {" +
                 "id=" + id +
-                ", nome='" + name + '\'' +
-                ", referencia='" + reference + '\'' +
-                ", valor=" + value +
-                ", estoque=" + stock +
-                ", ativo=" + active +
+                ", name='" + name + '\'' +
+                ", reference='" + reference + '\'' +
+                ", value=" + value +
+                ", stock=" + stock +
+                ", active=" + active +
                 '}';
     }
 }

@@ -8,16 +8,16 @@ public class SaleResponse {
 
     private Long id;
     private Long idCustomer;
-    private List<DetailMinResponse> detailMinResponse;
+    private List<DetailMinResponse> detailsMinResponse;
     private Double value;
 
     public SaleResponse() {
     }
 
-    public SaleResponse(Long id, Long idCustomer, List<DetailMinResponse> detailMinResponse, Double value) {
+    public SaleResponse(Long id, Long idCustomer, List<DetailMinResponse> detailsMinResponse, Double value) {
         this.id = id;
         this.idCustomer = idCustomer;
-        this.detailMinResponse = detailMinResponse;
+        this.detailsMinResponse = detailsMinResponse;
         this.value = value;
     }
 
@@ -38,11 +38,11 @@ public class SaleResponse {
     }
 
     public List<DetailMinResponse> getDetailMinResponse() {
-        return detailMinResponse;
+        return detailsMinResponse;
     }
 
-    public void setDetailMinResponse(List<DetailMinResponse> detailMinResponse) {
-        this.detailMinResponse = detailMinResponse;
+    public void setDetailsMinResponse(List<DetailMinResponse> detailsMinResponse) {
+        this.detailsMinResponse = detailsMinResponse;
     }
 
     public Double getValue() {
@@ -55,11 +55,11 @@ public class SaleResponse {
 
     @Override
     public String toString() {
-        return "VendaResponse{" +
+        return "SaleResponse {" +
                 "id=" + id +
-                ", idCliente=" + idCustomer +
-                ", detalheMinResponse=" + detailMinResponse +
-                ", valorTotal=" + value +
+                ", idCustomer=" + idCustomer +
+                ", detailsMinResponse=" + detailsMinResponse +
+                ", value=" + value +
                 '}';
     }
 }
