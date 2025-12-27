@@ -1,15 +1,19 @@
 package br.com.guilhermeRibeiro.backendGigaStore.domain.mapper.venda;
 
-import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.response.details.DetailMinResponse;
-import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.response.sale.SaleResponse;
-import br.com.guilhermeRibeiro.backendGigaStore.domain.entity.Detail;
-import br.com.guilhermeRibeiro.backendGigaStore.domain.entity.Sale;
-import br.com.guilhermeRibeiro.backendGigaStore.domain.service.DetailService;
-import org.mapstruct.*;
+import java.util.List;
+import java.util.ArrayList;
+
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
+import org.mapstruct.BeforeMapping;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.ArrayList;
-import java.util.List;
+import br.com.guilhermeRibeiro.backendGigaStore.domain.entity.Sale;
+import br.com.guilhermeRibeiro.backendGigaStore.domain.entity.Detail;
+import br.com.guilhermeRibeiro.backendGigaStore.domain.service.DetailService;
+import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.response.sale.SaleResponse;
+import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.response.details.DetailMinResponse;
 
 @Mapper(componentModel = "spring")
 public abstract class SaleResponseMapper {
@@ -24,11 +28,11 @@ public abstract class SaleResponseMapper {
 
     @BeforeMapping
     protected void mapperDetails(Sale sale, @MappingTarget SaleResponse response) {
-        DetailMinResponse detailMinResponse = new DetailMinResponse();
         List<DetailMinResponse> responses = new ArrayList<>();
         List<Detail> details = detailService.findDetailsBySaleId(sale.getId());
 
         for (Detail detail : details) {
+            DetailMinResponse detailMinResponse = new DetailMinResponse();
             detailMinResponse.setProduct(detail.getProduct());
             detailMinResponse.setQuantityProduct(detail.getQuantityProduct());
             detailMinResponse.setValueProduct(detail.getValueProduct());
