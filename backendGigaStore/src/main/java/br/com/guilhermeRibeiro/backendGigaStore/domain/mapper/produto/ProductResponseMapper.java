@@ -1,10 +1,11 @@
 package br.com.guilhermeRibeiro.backendGigaStore.domain.mapper.produto;
 
-import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.response.product.ProductResponse;
-import br.com.guilhermeRibeiro.backendGigaStore.domain.entity.Product;
+import java.util.List;
+
 import org.mapstruct.Mapper;
 
-import java.util.List;
+import br.com.guilhermeRibeiro.backendGigaStore.domain.entity.Product;
+import br.com.guilhermeRibeiro.backendGigaStore.domain.dto.response.product.ProductResponse;
 
 @Mapper(componentModel = "spring")
 public interface ProductResponseMapper {
